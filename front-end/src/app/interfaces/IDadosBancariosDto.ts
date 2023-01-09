@@ -4,6 +4,6 @@ export interface IDadosBancariosDto {
   Agencia:string,
   NumeroConta:string,
   Poupanca:boolean,
-   IdProfissional:number
+  idProfissional:number,
 }
 

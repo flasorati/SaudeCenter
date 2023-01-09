@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 import { ActivatedRoute, Router } from "@angular/router";
 
@@ -27,14 +27,13 @@ export class CadastroMedicoComponent {
     idRecebido!: number;
 
 
+
     constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {
 
       this.route.paramMap.subscribe(params => {
 
         this.idRecebido = Number(params.get('id'));
-
       });
-
     }
 
 
@@ -47,6 +46,7 @@ export class CadastroMedicoComponent {
     ngOnInit(): void {
 
       this.profissional = {
+        idProfissional: 0,
 
         nome: '',
 

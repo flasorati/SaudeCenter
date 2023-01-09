@@ -20,6 +20,7 @@ export class CadastroHospitalComponent {
 
   ngOnInit(): void {
     this.hospital = {
+      idHospital: 0,
       nome: '',
       cnpj: '',
       endereco: '',
@@ -33,12 +34,12 @@ export class CadastroHospitalComponent {
     //implementar o objeto na api, chamar a api(subcribe)
     this.http.post('https://localhost:7154/Hospital/CadastrarHospital', this.hospital)
       .subscribe((data: any) => {
-          this.router.navigate(['cadastro-hospital']);
+          this.router.navigate([`cadastro-hospital`]);
       });
   }
 
   submitFormulario(valorFormulario: any) {
-    console.log(`valor do formulário: ${JSON.stringify(valorFormulario)}`);
+    //console.log(`valor do formulário: ${JSON.stringify(valorFormulario)}`);
     this.cadastrarHospital();
   }
 

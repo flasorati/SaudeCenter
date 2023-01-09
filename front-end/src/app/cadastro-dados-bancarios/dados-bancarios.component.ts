@@ -35,7 +35,7 @@ export class CadastroDadosBancariosComponent {
       Agencia:'',
       NumeroConta:'',
       Poupanca: true,
-      IdProfissional: 0,
+      idProfissional: 0,
     }
   }
 

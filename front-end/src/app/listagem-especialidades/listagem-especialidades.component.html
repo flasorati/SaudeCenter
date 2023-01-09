@@ -1,0 +1,45 @@
+<div *ngIf="telaParaApresentar == 'lista'">
+  <div>
+    <h3 class="text-center" >Lista das Especialidades</h3>
+    <!-- <div class="input-group-prepend"> -->
+      <!--<input type="text" placeholder="Adicionar tarefa" name="tarefa" #tarefa
+      [(ngModel)]="tarefaNomeModel" maxlength="5" class="form-control">-->
+
+    <!--<span (click)="adicionarPessoa();" class="input-group-text">
+      <i class="material-icons">add</i>
+    </span>-->
+    <!-- </div> -->
+  </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Código da Especialidade(id)</th>
+          <th>Nome</th>
+          <th>Descrição</th>
+          <th>Ativo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor="let especialidadeItem of listaEspecialidades">
+          <td>{{especialidadeItem.idEspecialidade}}</td>
+          <td>{{especialidadeItem.nome}}</td>
+          <td>{{especialidadeItem.descricao}}</td>
+          <td>{{especialidadeItem.ativo == true?"ativo": "inativo"}}</td>
+            <button class="btn btn-link" style="flex-wrap:nowrap; margin-left: 0.5 rem;" type="link" (click)="editarEspecialidade(especialidadeItem.idEspecialidade);">Editar</button>
+            <button class="btn btn-link" style="flex-wrap:nowrap; margin-left: 0.5 rem;" type="link" (click)="removerEspecialidade(especialidadeItem.idEspecialidade);">Remover</button>
+        </tr>
+      </tbody>
+    </table>
+  <!--<div class="data">
+    <ul class="list-unstyled">
+      <li *ngFor="let medicoItem of listaProfissionais">
+        <span>{{medicoItem.nome}}</span><br>
+        <span>{{medicoItem.endereco}}</span><br>
+        <span>{{medicoItem.ativo}}</span><br>
+        <span>{{medicoItem.telefone}}</span><br>
+      </li>
+    </ul>
+  </div>-->
+</div>
+
+<!-- <app-listagem-medico *ngIf="telaParaApresentar == 'lista'" ></app-listagem-medico> -->

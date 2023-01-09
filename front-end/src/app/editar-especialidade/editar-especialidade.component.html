@@ -1,0 +1,41 @@
+<h2 class="m-3" style="color: #1358ab">ALTERAÇÃO DE CADASTRO DA ESPECIALIDADE</h2>
+<form class="container pt-4 m-5">
+    <div class="col-md-4">
+      <label for="inputName" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="inputName" [(ngModel)]="especialidade.nome" name="nome">
+    </div><br>
+
+    <div class="col-md-4">
+      <label for="inputDescription" class="form-label">Descrição</label>
+      <input type="text" class="form-control" id="inputDescription" [(ngModel)]="especialidade.descricao" name="descricao">
+    </div>
+
+    <!-- <div class="col-12  mt-4">
+      <div class="form-check">
+      <label for="inputActive" class="form-label" >Status</label><br>
+      <input type="radio" name="opcao" id="opcao" value="opcaoTrue" (change)="validaOpcao(true)"> Ativo
+      <input type="radio" name="opcao" id="opcao" value="opcaoFalse"(change)="validaOpcao(false)"> Inativo
+    </div>
+    </div>  -->
+
+    <div>
+      <button type="submit" class="btn mt-4" (click)="salvarAlteracao()" style="background-color: #1358ab; color: white;">Cadastrar</button>
+    </div>
+</form>
+
+<footer class="bg-light text-center mt-4">
+  <div class="container p-4" style="color: #1358ab;">
+    <div class="d-flex justify-content-center">
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Conheça a Saude Center</h5>
+        <p>
+          A Saude Center é uma rede consolidada de clínicas espalhadas por todo país. Atendemos todas as principais especialidades médicas para suprir todas as necessidades dos nossos pacientes. Contamos com os melhores profissionais, sempre pensando no seu bem estar!
+        </p>
+      </div>
+      </div>
+    </div>
+
+  <div class="text-center p-3" style="background-color: #0a2262; color: white;">
+    © 2022 Todos os direitos reservados
+  </div>
+</footer>

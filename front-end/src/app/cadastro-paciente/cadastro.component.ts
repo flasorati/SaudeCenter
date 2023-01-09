@@ -24,6 +24,7 @@ export class CadastroComponent {
 
   ngOnInit(): void {
     this.beneficiario = {
+      idBeneficiario: 0,
       nome: '',
       cpf: '',
       email: '',

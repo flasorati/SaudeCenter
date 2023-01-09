@@ -13,6 +13,7 @@
     <table class="table">
       <thead>
         <tr>
+          <th>Código do Hospital(id)</th>
           <th>Nome</th>
           <th>Cnpj</th>
           <th>Endereço</th>
@@ -23,12 +24,17 @@
       </thead>
       <tbody>
         <tr  *ngFor="let hospitalItem of listaHospitais">
+          <td>{{hospitalItem.idHospital}}</td>
           <td>{{hospitalItem.nome}}</td>
           <td>{{hospitalItem.cnpj}}</td>
           <td>{{hospitalItem.endereco}}</td>
           <td>{{hospitalItem.telefone}}</td>
           <td>{{hospitalItem.cnes}}</td>
           <td>{{hospitalItem.ativo == true?"ativo": "inativo"}}</td>
+            <!-- <a target="_blank" routerLink="/editar-hospital">Consulta Lista de Profissionais</a> -->
+            <button class="btn btn-link" style="flex-wrap:nowrap; margin-left: 0.5 rem;" type="link" (click)="editarHospital(hospitalItem.idHospital);">Editar</button>
+            <!-- <i class="material-icons" (click)="detalharHospital(itemdoarray.idHospital);">visibility</i> -->
+            <button class="btn btn-link" style="flex-wrap:nowrap; margin-left: 0.5 rem;" type="link" (click)="removerHospital(hospitalItem.idHospital);">Remover</button>
         </tr>
       </tbody>
     </table>

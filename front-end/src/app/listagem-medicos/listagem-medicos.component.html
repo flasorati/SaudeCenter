@@ -1,7 +1,8 @@
 <div *ngIf="telaParaApresentar == 'lista'">
   <div>
-    <h3 class="text-center" >Lista de Médicos</h3>
-    <!-- <div class="input-group-prepend"> -->
+    <h3 class="text-center" >Lista dos Profissionais</h3>
+
+     <!-- <div class="input-group-prepend"> -->
       <!--<input type="text" placeholder="Adicionar tarefa" name="tarefa" #tarefa
       [(ngModel)]="tarefaNomeModel" maxlength="5" class="form-control">-->
 
@@ -13,6 +14,7 @@
     <table class="table">
       <thead>
         <tr>
+          <th>Identificador do Profissional</th>
           <th>Nome</th>
           <th>Telefone</th>
           <th>Endereço</th>
@@ -20,14 +22,21 @@
         </tr>
       </thead>
       <tbody>
-        <tr  *ngFor="let medicoItem of listaProfissionais">
-          <td>{{medicoItem.nome}}</td>
-          <td>{{medicoItem.telefone}}</td>
-          <td>{{medicoItem.endereco}}</td>
-          <td>{{medicoItem.ativo == true?"ativo": "inativo"}}</td>
+        <tr  *ngFor="let profissionalItem of listaProfissionais">
+          <td>{{profissionalItem.idProfissional}}</td>
+          <td>{{profissionalItem.nome}}</td>
+          <td>{{profissionalItem.telefone}}</td>
+          <td>{{profissionalItem.endereco}}</td>
+          <td>{{profissionalItem.ativo == true?"ativo": "inativo"}}</td>
+            <button class="btn btn-link" style="flex-wrap:nowrap; margin-left: 0.5 rem;" type="link" (click)="editarProfissional(profissionalItem.idProfissional);">Editar</button>
+            <!-- <i class="material-icons" (click)="detalharHospital(itemdoarray.idHospital);">visibility</i> -->
+            <button class="btn btn-link" style="flex-wrap:nowrap; margin-left: 0.5 rem;" type="link" (click)="removerProfissional(profissionalItem.idProfissional);">Remover</button>
         </tr>
       </tbody>
     </table>
+    <!-- <div>
+      <button (click)= "fechar" class="btn" style="background-color: #1358ab; color: white; margin-left: 1rem;">Fechar</button>
+    </div> -->
   <!--<div class="data">
     <ul class="list-unstyled">
       <li *ngFor="let medicoItem of listaProfissionais">
@@ -38,6 +47,7 @@
       </li>
     </ul>
   </div>-->
+
 </div>
 
 <!-- <app-listagem-medico *ngIf="telaParaApresentar == 'lista'" ></app-listagem-medico> -->

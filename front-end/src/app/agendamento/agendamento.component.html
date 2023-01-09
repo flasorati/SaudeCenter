@@ -1,0 +1,75 @@
+<h2 class="m-3" style="color: #1358ab">AGENDAMENTO DE CONSULTAS</h2>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="container pt-4 m-1">
+
+  <div>
+    <label for="hospital" class="form-label">Selecione o hospital:</label>
+      <select class="form-select" id="hospital" formControlName="hospital" >
+        <option selected *ngFor="let hospital of listaHospitais" [ngValue]="hospital.idHospital">
+          {{hospital.nome}}
+        </option>
+      </select>
+  </div><br>
+
+  <div>
+    <label for="especialidade" class="form-label">Selecione a especialidade:</label>
+    <select class="form-select" id="especialidade" formControlName="especialidade">
+      <option *ngFor="let especialidade of listaEspecialidades" [ngValue]="especialidade.idEspecialidade">
+        {{especialidade.nome}}
+      </option>
+    </select>
+  </div><br>
+
+  <div>
+    <label for="profissional" class="form-label">Selecione o profissional:</label>
+    <select class="form-select" id="profissional" formControlName="profissional">
+      <option selected *ngFor="let profissional of listaProfissionais" [ngValue]="profissional.idProfissional">
+          {{profissional.nome}}
+      </option>
+    </select>
+    </div><br>
+
+    <div>
+    <label for="dataHora" class="form-label">Selecione a data e hora da consulta:</label>
+    <input type="datetime-local" id="inputDateNow" class="registerInput inputCodeDate" placeholder="Activation" readonly>
+    </div><br>
+
+    <div>
+      <label for="beneficiario" class="form-label">Preencha seu id:</label>
+      <input type="text" class="form-control" formControlName="beneficiario" id="beneficiario"><br>
+      <a target="_blank" routerLink="/listagem-paciente">Consulte seu id</a>
+      <h6>Se você ainda não possui cadastro, <a target="_blank" routerLink="/cadastro-paciente">clique aqui.</a></h6>
+    </div><br>
+
+    <div class="col-md-3">
+      <label for="status" class="control-label">Status do Agendamento:</label>
+      <div id="status" class="row">
+        <label class="radio-inline">
+          <input type="radio" formControlName="status"/>Ativo
+          </label>
+        </div>
+    </div>
+
+
+    <div>
+      <button type="submit" class="btn mt-4" (click)="confirmar()" style="background-color: #1358ab; color: white;">Confimar</button>
+      <button type="button" class="btn mt-4" (click)="resetar()" style="background-color: #1358ab; color: white; margin-left: 0.5rem;">Limpar</button>
+    </div>
+
+  </form>
+
+  <footer class="bg-light text-center mt-4">
+    <div class="container p-4" style="color: #1358ab;">
+      <div class="d-flex justify-content-center">
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Conheça a Saude Center</h5>
+          <p>
+            A Saude Center é uma rede consolidada de clínicas espalhadas por todo país. Atendemos todas as principais especialidades médicas para suprir todas as necessidades dos nossos pacientes. Contamos com os melhores profissionais, sempre pensando no seu bem estar!
+          </p>
+        </div>
+        </div>
+      </div>
+
+    <div class="text-center p-3" style="background-color: #0a2262; color: white;">
+      © 2022 Todos os direitos reservados
+    </div>
+  </footer>

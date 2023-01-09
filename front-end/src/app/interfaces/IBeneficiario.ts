@@ -1,4 +1,5 @@
 export interface IBeneficiarioDto {
+  idBeneficiario:number,
   nome:string,
   cpf:string,
   email:string,

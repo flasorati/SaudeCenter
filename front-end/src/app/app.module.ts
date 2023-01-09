@@ -9,11 +9,18 @@ import { CadastroHospitalComponent } from './cadastro-hospital/cadastro-hospital
 import { CadastroMedicoComponent } from './cadastro-medico/cadastro-medico.component';
 import { CadastroEspecialidadeComponent } from './cadastro-especialidade/cadastro-especialidade.component';
 import { HomeComponent } from './home/home.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CadastroDadosBancariosComponent } from './cadastro-dados-bancarios/dados-bancarios.component';
 import { ListagemMedicoComponent } from './listagem-medicos/listagem-medicos.component';
 import { ListagemPacienteComponent } from './listagem-paciente/listagem-paciente.component';
 import { ListagemHospitaisComponent } from './listagem-hospitais/listagem-hospitais.component';
+import { EditarHospitalComponent } from './editar-hospital/editar-hospital.component';
+import { EditarPacienteComponent } from './editar-paciente/editar-paciente.component';
+import { EditarMedicoComponent } from './editar-medico/editar-medico.component';
+import { ListagemEspecialidadesComponent } from './listagem-especialidades/listagem-especialidades.component';
+import { EditarEspecialidadeComponent } from './editar-especialidade/editar-especialidade.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -28,12 +35,23 @@ import { ListagemHospitaisComponent } from './listagem-hospitais/listagem-hospit
     ListagemMedicoComponent,
     ListagemPacienteComponent,
     ListagemHospitaisComponent,
+    EditarHospitalComponent,
+    EditarPacienteComponent,
+    EditarMedicoComponent,
+    ListagemEspecialidadesComponent,
+    EditarEspecialidadeComponent
+
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    BrowserAnimationsModule,
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,6 +20,7 @@ export class CadastroEspecialidadeComponent {
 
   ngOnInit(): void {
     this.especialidade = {
+      idEspecialidade:0,
       nome: '',
       descricao: '',
       ativo: true
@@ -29,7 +30,7 @@ export class CadastroEspecialidadeComponent {
   cadastrar() {
     this.http.post('https://localhost:7154/Especialidade/CadastrarEspecialidade', this.especialidade)
       .subscribe((data: any) => {
-        this.router.navigate(['cadastro-especialidade'])
+        this.router.navigate(['cadastro-especialidade']);
       })
   }
 
